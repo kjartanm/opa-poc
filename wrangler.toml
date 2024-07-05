@@ -1,0 +1,28 @@
+name = "no-muller-services-authorizer"
+main = "./src/index.js"
+compatibility_date = "2024-04-19"
+workers_dev = true
+
+rules = [
+  { type = "CompiledWasm", globs = ["**/*.wasm"], fallthrough = true },
+  { type = "Data", globs = ["**/*.json"], fallthrough = true },
+]
+
+kv_namespaces = [
+  { binding = "TENANT_DATA", id = "ba851687795b4c8896ea5cb28932b2fe", preview_id = "e38a6339f934499b95960881f5e6992a" }
+]
+
+[durable_objects]
+bindings = [
+  { name = "AUTHORIZER", class_name = "OPAAuthorizer" }
+]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["AuthorizeDO"]
+
+[[migrations]]
+tag = "v2" # Should be unique for each entry
+renamed_classes = [{from = "AuthorizeDO", to = "OPAAuthorizer" }]
+
+

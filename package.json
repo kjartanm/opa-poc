@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "no-muller-services-authorizer",
+  "version": "0.0.1",
+  "description": "OPA based authorizer service.",
+  "main": "./src/index.js",
+  "scripts": {
+    "format": "prettier --config ./.prettierrc --write '**/*.{js,mjs,css,json,md}'",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "author": "kjartanm",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "wrangler": "^3.52.0"
+  },
+  "dependencies": {
+    "@open-policy-agent/opa-wasm": "^1.8.1"
+  }
+}

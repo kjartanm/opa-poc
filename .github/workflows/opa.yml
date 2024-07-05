@@ -1,0 +1,18 @@
+name: GitHub Opa Action
+run-name: ${{ github.actor }} is deploying OPA Wasm 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Run script
+        run: scripts/opa.sh
+      - name: Deploy service
+        run: npm run deploy
+        env: 
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

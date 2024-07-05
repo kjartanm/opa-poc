@@ -1,0 +1,22 @@
+{
+    "managers": {
+        "bob": "development",
+        "carol": "it"
+    },
+    "pm": {
+        "peter": ["proj1", "proj2"],
+        "quentin": ["proj3"]
+    },
+    "projects": {
+        "proj1": ["betty", "chris"],
+        "proj2": ["alice", "fionna"],
+        "proj3": ["dave", "grant"]
+    },
+    "departments": {
+        "development": ["alice", "betty", "dave", "john"],
+        "it": ["chris", "donna"],
+        "sales": ["eric", "fionna"],
+        "pr": ["grant", "holly"],
+        "pm": ["peter", "quentin"]
+    }
+}
