@@ -10,7 +10,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run script
-        run: scripts/opa.sh
+        run: ./scripts/opa.sh
       - name: Deploy service
         run: npm run deploy
         env: 
